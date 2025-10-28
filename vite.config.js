@@ -22,4 +22,9 @@ export default defineConfig({
       exclude: ["node_modules/", "src/setupTests.js"],
     },
   },
+  build: {
+    rollupOptions: {
+      external: ["lucide-react"],
+    },
+  },
 });
