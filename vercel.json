@@ -1,0 +1,28 @@
+{
+  "builds": [
+    {
+      "src": "react-ticket/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "react-ticket/dist"
+      }
+    },
+    {
+      "src": "vue-ticket/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "vue-ticket/dist"
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/react/(.*)",
+      "destination": "/react-ticket/$1"
+    },
+    {
+      "source": "/vue/(.*)",
+      "destination": "/vue-ticket/$1"
+    }
+  ]
+}
