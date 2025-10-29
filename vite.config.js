@@ -6,7 +6,7 @@ import { URL } from "url";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/react/",
+  base: process.env.VITE_BASE_URL || "/react-ticket",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
