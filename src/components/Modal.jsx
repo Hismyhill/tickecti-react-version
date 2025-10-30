@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback, useRef } from "react";
+import { X } from "lucide-react";
 
 export default function Modal({ isOpen, onClose, title, children }) {
   const modalRef = useRef(null);
@@ -42,7 +43,7 @@ export default function Modal({ isOpen, onClose, title, children }) {
       <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20">
         {/* Overlay with backdrop blur */}
         <div
-          className="fixed inset-0 bg-gray-500/75 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 bg-gray-500/75 backdrop-blur-sm animate-fade-in cursor-pointer"
           aria-hidden="true"
           onClick={onClose}
         />
@@ -75,19 +76,7 @@ export default function Modal({ isOpen, onClose, title, children }) {
                 className="text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-full p-1 transition-colors duration-200"
                 aria-label="Close modal"
               >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <X className="w-6 h-6" />
               </button>
             </div>
           </div>
